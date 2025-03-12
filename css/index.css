@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-snap-type: y mandatory;
+}
+body {
+    margin: 0;
+   /*font-family: pro;*/
+   font-family: Arial;
+    background-image: linear-gradient(to top right, #0b1635, #000);
+    color: white;
+}
+
+@font-face {
+  font-family: pro;
+  src: url('StretchPro.otf')
+}
+@font-face {
+  font-family: arco;
+  src: url('ARCO for OSX.otf')
+}
+
+header {
+    background-color: rgba(11, 22, 53, 0.8);
+    backdrop-filter: blur(20px);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    animation: in 1.2s forwards;
+}
+
+@keyframes in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+header h1 {
+    margin: 0;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: pro;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.5s;
+    font-family: arco;
+}
+nav ul li a:hover {
+  text-shadow: 0 0 5px cyan,
+  0 0 25px cyan, 0 0 50px cyan,
+  0 0 100px cyan, 0 0 200px cyan;
+  transition: 0.5s;
+}
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding: 50px;
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 30px;
+    border: 3px solid white;
+}
+
+.about-text h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+  /*  font-family: pro;*/
+}
+
+.about-text p {
+    font-size: 12px;
+    line-height: 1.5;
+    max-width: 500px;
+ /*   font-family: arco;*/
+}
+
+@media (max-width: 768px) {
+    header {
+     flex-direction: column;
+     text-align: center;
+    }
+    .content1 {
+      float: right;
+      flex-direction: column;
+    }
+    nav ul {
+        margin-top: 10px;
+    }
+
+    .about {
+        flex-direction: column;
+    }
+    .about-text {
+        text-align: center;
+      float: right;
+    }
+
+    .profile-pic {
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 19px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    .about-text h2 {
+        font-size: 24px;
+    }
+
+    .about-text p {
+        font-size: 14px;
+    }
+}
+
+.skills {
+    text-align: center;
+    padding: 50px;
+    animation: fadeIn2 1.5s ease-out forwards;
+    opacity: 0;
+    transition: 1s;
+  transform: translateY(30px);
+}
+#mySkills.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 1s;
+}
+
+.skill {
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    width: 200px;
+    background: #444;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px auto;
+    height: 20px;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    border-radius: 10px;
+    transition: width 2s ease-in-out;
+}
+
+.html {
+    width: 0%;
+}
+
+.css {
+    width: 0%;
+}
+
+.js {
+    width: 0%;
+}
+.content1 {
+  text-align: center;
+  margin: 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1s;
+  animation: ct 1s ease-in-out forwards;
+}
+#ct1.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+@keyframes ct {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+#loader { 
+            border: 12px solid #f3f3f3;
+            background-color: black;
+            border-radius: 50%; 
+            border-top: 12px solid #444444; 
+            width: 70px; 
+            height: 70px; 
+            animation: spin 1s linear infinite; 
+        } 
+         
+        @keyframes spin { 
+            100% { 
+                transform: rotate(360deg); 
+            } 
+        } 
+         
+        .center { 
+            position: absolute; 
+            top: 0; 
+            bottom: 0; 
+            left: 0; 
+            right: 0; 
+            margin: auto; 
+        }
+
+@keyframes fadeIn {
+   from {
+     opacity: 0;
+     transform: translateY(20px);
+        }
+   to {
+     opacity: 1;
+     transform: translateY(0);
+     }
+ }
+.float {
+  z-index: 100;
+  position: fixed;
+  display: flex;
+  right: 20px;
+  bottom: 40px;
+}
+.float img {
+  border-radius: 50%;
+  height: auto;
+  width: 50px;
+}

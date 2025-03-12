@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+  font-family: arco;
+  src: url('ARCO for OSX.otf')
+}
+@font-face {
+  font-family: pro;
+  src: url('StretchPro.otf')
+}
+body {
+  font-family: Arial;
+  background: linear-gradient(to right, #1a0063, #000000);
+}
+.judul h3 {
+  position: relative;
+  text-align: center;
+  color: white;
+  top: 40px;
+  font-size: 22px;
+  font-family: pro;
+  margin: 20px;
+}
+.social {
+  align-items: center;
+  position: relative;
+  top: 40px;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  flex-wrap: nowrap;
+  transform: translateY(30px);
+  animation: fade 1s ease-in-out forwards;
+}
+
+.social a {
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  font-family: arco;
+  margin: 10px;
+  transition: 1s;
+}
+.social img {
+  justify-content: space-between;
+  box-shadow: 0 0 10px 0 cyan;
+  align-items: center;
+  display: flex;
+  border-radius: 10px;
+  height: auto;
+  width: 50px;
+  right: 20px;
+  margin: 10px;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.cr {
+  position: fixed;
+  bottom: 40px;
+  text-align: center;
+  left: 0;
+  right: 0;
+}
+.cr h3 {
+  font-size: 10px;
+  color: white;
+}
